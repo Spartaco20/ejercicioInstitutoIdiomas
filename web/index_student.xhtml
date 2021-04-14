@@ -1,0 +1,161 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:html5="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Hotel</title>
+        
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
+        
+    </h:head>
+    <h:body>
+        <div class="container">
+        <!-- Page Content goes here -->
+            <div class="row">
+                <h:form class="row col-md-12">
+                    <div class="col-md-12" style="padding-top: 20px;">
+                        <h1 style="text-align: center;"><strong>British Council - Language Institute</strong></h1>
+                    </div>
+                    <div class="col-md-12" style="padding-top: 25px;">
+                        <h1 style="text-align: left;"><strong>Registration Form</strong></h1>
+                    </div>  
+                    <div class="col-md-6" style="padding-top: 30px;">
+                        <label for="nombre"><strong>First Name</strong></label>
+                        <h:inputText id="nombre" maxlength="30" value="#{processInstituto.alumno.nombre}" class="form-control col-xs-12"/>
+                    </div>
+                    <div class="col-md-6" style="padding-top: 30px;">
+                        <label for="apellido"><strong>Last Name</strong></label>
+                        <h:inputText id="apellido" maxlength="30" value="#{processInstituto.alumno.apellido}" class="form-control col-xs-12"/>
+                    </div>
+                    <div class="col-md-6" style="padding-top: 30px;">
+                        <label for="id"><strong>Identification Type</strong></label>
+                        <h:selectOneMenu value="#{processInstituto.alumno.tipoIdentificacion}" class="form-control">
+                            <f:selectItem itemValue="" itemLabel="" />
+                            <f:selectItem itemValue="Citizenship card" itemLabel="Citizenship card" />
+                            <f:selectItem itemValue="Identity card" itemLabel="Identity card" />
+                            <f:selectItem itemValue="Foreign Identity card" itemLabel="Foreign Identity card" />
+                            <f:selectItem itemValue="Passport" itemLabel="Passport" />
+                        </h:selectOneMenu>
+                    </div>
+                    <div class="col-md-6" style="padding-top: 30px;">
+                        <label for="numero"><strong>ID Number</strong></label>
+                        <h:inputText id="numero" maxlength="10" value="#{processInstituto.alumno.numeroId}" class="form-control col-xs-12"/>
+                    </div>
+                    <div class="col-md-6" style="padding-top: 30px;">
+                        <label for="direccion"><strong>Address</strong></label>
+                        <h:inputText id="direccion" maxlength="20" value="#{processInstituto.alumno.direccion}" class="form-control"/>
+                    </div>
+                    <div class="col-md-6" style="padding-top: 30px;">
+                        <label for="telefono"><strong>Phone Number</strong></label>
+                        <h:inputText id="telefono" maxlength="10" value="#{processInstituto.alumno.telefono}" class="form-control"/>
+                    </div>
+                    <div class="col-md-6" style="padding-top: 30px;">
+                        <label for="profesion"><strong>Profession</strong></label>
+                        <h:inputText id="profesion" maxlength="15" value="#{processInstituto.alumno.profesion}" class="form-control"/>
+                    </div>
+                    <div class="col-md-6" style="padding-top: 30px;">
+                        <label for="estado"><strong>Marital Status</strong></label>
+                        <h:selectOneMenu value="#{processInstituto.alumno.estadoCivil}" class="form-control">
+                            <f:selectItem itemValue="Single" itemLabel="Single" />
+                            <f:selectItem itemValue="Married" itemLabel="Married" />
+                            <f:selectItem itemValue="Widower" itemLabel="Widower" />
+                            <f:selectItem itemValue="Separated" itemLabel="Separated" />
+                            <f:selectItem itemValue="Free Union" itemLabel="Free Union" />
+                        </h:selectOneMenu>
+                    </div>
+                    <div class="col-md-6" style="padding-top: 30px;">
+                        <label for="curso"><strong>Select Course</strong></label>
+                        <h:selectOneMenu value="#{processInstituto.alumno.curso}" class="form-control">
+                            <f:selectItem itemValue="" itemLabel="" />
+                            <f:selectItem itemValue="English" itemLabel="English" />
+                            <f:selectItem itemValue="French" itemLabel="French" />
+                            <f:selectItem itemValue="Portuguese" itemLabel="Portuguese" />
+                        </h:selectOneMenu>
+                    </div>
+                    <div class="col-md-6" style="padding-top: 30px;">
+                        <label for="nivel"><strong>Select Level</strong></label>
+                        <h:selectOneMenu value="#{processInstituto.alumno.nivel}" class="form-control">
+                            <f:selectItem itemValue="A1" itemLabel="A1" />
+                            <f:selectItem itemValue="A2" itemLabel="A2" />
+                            <f:selectItem itemValue="B1" itemLabel="B1" />
+                            <f:selectItem itemValue="B2" itemLabel="B2" />
+                        </h:selectOneMenu>
+                    </div>
+                    <div class="col-md-6" style="padding-top: 30px;">
+                        <label for="formapago"><strong>Way to Pay</strong></label>
+                        <h:selectOneMenu value="#{processInstituto.alumno.formaPago}" class="form-control">
+                            <f:selectItem itemValue="" itemLabel="" />
+                            <f:selectItem itemValue="Cash" itemLabel="Cash" />
+                            <f:selectItem itemValue="Credit Card" itemLabel="Credit Card" />
+                            <f:selectItem itemValue="Bank Check" itemLabel="Bank Check" />
+                        </h:selectOneMenu>
+                        <p><strong>#{processInstituto.alumno.msn1}</strong></p>
+                    </div>
+                    <div class="col-md-6" style="padding-top: 30px;">
+                        <label for="cuotas"><strong>Payment Plan (Dues)</strong></label>
+                        <h:selectOneMenu value="#{processInstituto.alumno.planPago}" class="form-control">
+                            <f:selectItem itemValue="1" itemLabel="1" />
+                            <f:selectItem itemValue="2" itemLabel="2" />
+                            <f:selectItem itemValue="3" itemLabel="3" />
+                        </h:selectOneMenu>
+                    </div>
+                    
+                    <div class="col-md-12">
+                        <h:commandButton type="submit" action="#{processInstituto.alumnoInscrito()}" value="Confirm Subscribe" class="btn btn-primary" style="margin: 25px; margin-left: 220px;"/>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" style="margin: 25px;">
+                            Consult Detail Subscribe
+                        </button>
+                        <a href="index_table.xhtml"><button type="button" class="btn btn-outline-primary" style="margin: 25px;">Consult Total Subscribe</button></a>
+                        
+                        
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalCenterTitle"></h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <h3 style="text-align: center;">Student Register</h3>
+                                        ------------------------------------------------------------------------
+                                        <p><strong>First Name</strong>: #{processInstituto.alumno.nombre}</p>
+                                        <p><strong>Last Name</strong>: #{processInstituto.alumno.apellido}</p>
+                                        <p><strong>Identification Type</strong>: #{processInstituto.alumno.tipoIdentificacion}</p>
+                                        <p><strong>ID Number</strong>: #{processInstituto.alumno.numeroId}</p>
+                                        <p><strong>Address</strong>: #{processInstituto.alumno.direccion}</p>
+                                        <p><strong>Phone Number</strong>: #{processInstituto.alumno.telefono}</p>
+                                        <p><strong>Profession</strong>: #{processInstituto.alumno.profesion}</p>
+                                        <p><strong>Marital Status</strong>: #{processInstituto.alumno.estadoCivil}</p>
+                                        <p><strong>Selected Course</strong>: #{processInstituto.alumno.curso}</p>
+                                        <p><strong>Selected Level</strong>: #{processInstituto.alumno.nivel}</p>
+                                        <p><strong>Way to Pay</strong>: #{processInstituto.alumno.formaPago}</p>
+                                        <p><strong>Payment Plan (Dues)</strong>: #{processInstituto.alumno.planPago}</p>
+                                        ------------------------------------------------------------------------
+                                        <p><h5 style="text-align: right;"><strong>Total Cost: </strong>$ #{processInstituto.alumno.valor}</h5></p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </h:form>
+            </div>
+        </div>
+        
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </h:body>
+</html>
+

@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Cuenta Bancaria</title>
+        
+        <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+     
+        <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
+
+        <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
+    </h:head>
+    <h:body>
+        <div class="container-fluid">
+        <!-- Page Content goes here -->
+            <div class="row">
+                <div class="col-md-12" style="padding-top: 20px;">
+                        <h1 style="text-align: center;"><strong>British Council - Language Institute</strong></h1>
+                </div>
+                <div class="col-md-12" style="padding-top: 25px;">
+                        <h4 style="text-align: center;"><strong>Students Registrated</strong></h4>
+                </div>  
+                    
+                <div class="col s12" style="margin-top: 30px;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Identification Type</th>
+                                <th>ID Number</th>
+                                <th>Address</th>
+                                <th>Phone Number</th>
+                                <th>Profession</th>
+                                <th>Marital Status</th>
+                                <th>Selected Course</th>
+                                <th>Selected Level</th>
+                                <th>Way to Pay</th>
+                                <th>Payment Plan (Dues)</th>
+                                <th>Total Cost</th>
+                            </tr>
+                        </thead>
+                        <c:forEach items="#{processInstituto.listaInscritos}" var="obl">
+                            <tr>
+                                <td>#{obl.nombre}</td>
+                                <td>#{obl.apellido}</td>
+                                <td>#{obl.tipoIdentificacion}</td>
+                                <td>#{obl.numeroId}</td>
+                                <td>#{obl.direccion}</td>
+                                <td>#{obl.telefono}</td>
+                                <td>#{obl.profesion}</td>
+                                <td>#{obl.estadoCivil}</td>
+                                <td>#{obl.curso}</td>
+                                <td>#{obl.nivel}</td>
+                                <td>#{obl.formaPago}</td>
+                                <td>#{obl.planPago}</td>
+                                <td>#{obl.valor}</td>
+                            </tr>
+                        </c:forEach>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </h:body>
+</html>
+
