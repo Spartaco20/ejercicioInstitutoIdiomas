@@ -10,7 +10,7 @@ package edu.idiomas.model;
  * @author HP
  */
 public class Students {
-    
+
     private String nombre = "";
     private String apellido = "";
     private String tipoIdentificacion = "";
@@ -24,7 +24,7 @@ public class Students {
     private String formaPago = "";
     private int planPago = 0;
     private int valor = 0;
-    
+
     private String msn1 = "";
     private String msn2 = "";
     private String msn3 = "";
@@ -47,27 +47,51 @@ public class Students {
         this.planPago = planPago;
         this.valor = valor;
     }
-    
-    public void metodoPago(){
-        if(formaPago.equals("Bank Check")){
+
+    public void metodoPago() {
+        if (formaPago.equals("Bank Check")) {
             this.msn1 = "Don't forget! Date shouldn't be more than 30 days";
         }
     }
-    
+
     public void valorCurso() {
-        if(curso.equals("English")) {
-            this.valor = 235000;
+        if (curso.equals("English")) {
+            if (nivel.equals("A1")) {
+                this.valor = 85000;
+            } else if (nivel.equals("A2")) {
+                this.valor = 110000;
+            } else if (nivel.equals("B1")) {
+                this.valor = 145000;
+            } else if (nivel.equals("B2")) {
+                this.valor = 192000;
+            }
         } else {
             if (curso.equals("French")) {
-                this.valor = 425000;
+                if (nivel.equals("A1")) {
+                    this.valor = 78000;
+                } else if (nivel.equals("A2")) {
+                    this.valor = 105000;
+                } else if (nivel.equals("B1")) {
+                    this.valor = 140000;
+                } else if (nivel.equals("B2")) {
+                    this.valor = 183000;
+                }
             } else {
-                if(curso.equals("Portuguese")) {
-                    this.valor = 365000;
+                if (curso.equals("Portuguese")) {
+                    if (nivel.equals("A1")) {
+                        this.valor = 74000;
+                    } else if (nivel.equals("A2")) {
+                        this.valor = 100000;
+                    } else if (nivel.equals("B1")) {
+                        this.valor = 137000;
+                    } else if (nivel.equals("B2")) {
+                        this.valor = 169000;
+                    }
                 }
             }
         }
     }
-    
+
     public String getNombre() {
         return nombre;
     }
@@ -171,7 +195,7 @@ public class Students {
     public void setValor(int valor) {
         this.valor = valor;
     }
-    
+
     public String getMsn1() {
         return msn1;
     }
@@ -195,5 +219,5 @@ public class Students {
     public void setMsn3(String msn3) {
         this.msn3 = msn3;
     }
-    
+
 }
